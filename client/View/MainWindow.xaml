@@ -1,0 +1,88 @@
+﻿<Window x:Class="client.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:client.View"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        MinWidth="300" Width="500"
+        MinHeight="200" Height="600"
+        WindowStartupLocation="CenterScreen"
+        Title="Local chat"
+        WindowStyle="None"
+        Style="{DynamicResource WindowStyle}">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" CornerRadius="0"/>
+    </WindowChrome.WindowChrome>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Name="HeaderRow" MinHeight="40" Height="40"></RowDefinition>
+            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition Name="MessageRow" MinHeight="44" Height="44"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Border Name="HeaderBorder" Grid.Row="0" MouseDown="HeaderBorder_MouseDown" Style="{DynamicResource PanelBorderStyle}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Name="ThemeButton" Grid.Column="1" Style="{DynamicResource BaseButtonStyle}" Click="ThemeButton_Click"></Button>
+
+                <Button Name="StatisticsButton" Grid.Column="2" Style="{DynamicResource BaseButtonStyle}">
+                    <iconPacks:Material Width="15" Height="15" Kind="ChartArc"></iconPacks:Material>
+                </Button>
+
+                <Button Name="AccountButton" Grid.Column="3" Style="{DynamicResource BaseButtonStyle}">
+                    <iconPacks:Material Width="15" Height="15" x:Name="AccountButtonIcon" Kind="Account"></iconPacks:Material>
+                </Button>
+
+                <Button Name="MinButton" Grid.Column="4" Style="{DynamicResource BaseButtonStyle}" Click="MinimizeButton_Click">
+                    <iconPacks:Material Width="15" Height="15" Kind="WindowMinimize"></iconPacks:Material>
+                </Button>
+
+                <Button Name="MaxButton" Grid.Column="5" Style="{DynamicResource BaseButtonStyle}" Click="MaximizeButton_Click">
+                    <iconPacks:Material Width="15" Height="15" Kind="WindowMaximize"></iconPacks:Material>
+                </Button>
+
+                <Button Name="CloseButton" Grid.Column="6" Style="{DynamicResource BaseButtonStyle}" Click="CloseButton_Click">
+                    <iconPacks:Material Width="15" Height="15" Kind="WindowClose"></iconPacks:Material>
+                </Button>
+            </Grid>
+        </Border>
+
+        <StackPanel Name="MessagePanel" Grid.Row="1"></StackPanel>
+
+        <Border Name="InputBorder" Grid.Row="2" Style="{DynamicResource PanelBorderStyle}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Border Name="InputTextBoxBorder" Grid.Column="0" Style="{DynamicResource BaseControlBorderStyle}" Margin="2 0 2 2" VerticalAlignment="Bottom" Height="auto" MinHeight="36">
+                    <TextBox Name="InputTextBox" Background="#00000000" BorderBrush="#00000000"></TextBox>
+                </Border>
+
+                <Button Name="InputFileButton" Grid.Column="1" Style="{DynamicResource BaseButtonStyle}" VerticalAlignment="Bottom" Height="36" Width="36">
+                    <iconPacks:Material Kind="AttachmentPlus" Width="15" Height="15"></iconPacks:Material>
+                </Button>
+
+                <Button Name="InputSendButton" Grid.Column="2" Style="{DynamicResource BaseButtonStyle}" VerticalAlignment="Bottom" Height="36" Width="36">
+                    <iconPacks:Material Kind="Send" Width="15" Height="15"></iconPacks:Material>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
