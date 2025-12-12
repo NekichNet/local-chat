@@ -5,22 +5,9 @@
         <ResourceDictionary Source="/View/Themes/Base.xaml"></ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="WindowStyle" TargetType="Window">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Window">
-                    <Grid>
-                        <Border x:Name="MainBorder"
-                                BorderBrush="#00b77b"
-                                BorderThickness="2"
-                                CornerRadius="7"
-                                Background="#c4fae8">
-                            <ContentPresenter Margin="5"/>
-                        </Border>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+    <Style x:Key="WindowBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="#0d231c"></Setter>
+        <Setter Property="BorderBrush" Value="#609a87"></Setter>
     </Style>
     <Style x:Key="PanelBorderStyle">
         <Setter Property="Control.Background" Value="#00da93"></Setter>

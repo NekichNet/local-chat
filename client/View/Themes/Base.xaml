@@ -1,6 +1,19 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:client.View">
+    <Style x:Key="WindowStyle" TargetType="Window">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Window">
+                    <Grid>
+                        <Border BorderThickness="2" CornerRadius="7" Style="{DynamicResource WindowBorderStyle}">
+                            <ContentPresenter Margin="5"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <Style x:Key="BaseControlBorderStyle" TargetType="Border">
         <Style.Setters>
             <Setter Property="CornerRadius" Value="7"></Setter>
